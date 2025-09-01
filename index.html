@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenPulse APP</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">GreenPulse <span>APP</span></div>
+    <nav>
+      <ul>
+        <li><a href="in.html">Home</a></li>
+        <li><a href="meals.html">Meals</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="others.html">Other apps</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Eat Smart, Stay Fit with <span>GreenPulse</span></h1>
+      <p>Your personal meal & fitness companion to live healthy and avoid lifestyle diseases.</p>
+      <button class="btn">Get Started</button>
+    </div>
+    <div class="hero-image">
+      <img src="images/warming.jpg" alt="Healthy Lifestyle">
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Why Choose GreenPulse?</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <h3>Track Meals</h3>
+        <p>Log your meals and get instant calorie breakdown.</p>
+      </div>
+      <div class="card">
+        <h3>Get Training Plans</h3>
+        <p>Receive exercise suggestions like running, push-ups & more.</p>
+      </div>
+      <div class="card">
+        <h3>Monitor Progress</h3>
+        <p>Track your weight with interactive graphs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Section with Graph -->
+  <section id="progress" class="progress">
+    <h2>Your Weight Progress</h2>
+    <canvas id="weightChart"></canvas>
+
+    <!-- Weight Input Form -->
+    <div class="weight-input">
+      <input type="number" id="weightValue" placeholder="Enter your weight (kg)">
+      <button id="addWeightBtn">Add Weight</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GreenPulse APP | Eat Healthy Live longer</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

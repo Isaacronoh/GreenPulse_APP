@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenPulse - Progress</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    GreenPulse - Progress Tracker
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="meals.html">Meals</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="others.html">Other apps</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Graph -->
+    <section>
+      <h2>Your Weight Progress</h2>
+      <canvas id="weightChart"></canvas>
+    </section>
+
+    <!-- Table -->
+    <section>
+      <h2>Daily Meals Log</h2>
+      <table border="1" cellpadding="10" cellspacing="0" width="100%">
+        <thead style="background: green; color: white;">
+          <tr>
+            <th>Date</th>
+            <th>Meal Time</th>
+            <th>Meals Taken</th>
+            <th>Total Calories</th>
+          </tr>
+        </thead>
+        <tbody id="mealsLog"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    // Load weight data
+    const weights = JSON.parse(localStorage.getItem("weights")) || [];
+    const weightLabels = weights.map(w => w.date);
+    const weightValues = weights.map(w => w.value);
+
+    const ctx = document.getElementById("weightChart").getContext("2d");
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: weightLabels,
+        datasets: [{
+          label: "Weight (kg)",
+          data: weightValues,
+          borderColor: "green",
+          backgroundColor: "rgba(0,128,0,0.2)",
+          fill: true,
+          tension: 0.4
+        }]
+      }
+    });
+
+    // Load meals data
+    const meals = JSON.parse(localStorage.getItem("meals")) || [];
+    const tableBody = document.getElementById("mealsLog");
+    meals.forEach(m => {
+      const row = `<tr>
+        <td>${m.date}</td>
+        <td>${m.time}</td>
+        <td>${m.items}</td>
+        <td>${m.calories}</td>
+      </tr>`;
+      tableBody.innerHTML += row;
+    });
+  </script>
+
+</body>
+</html>

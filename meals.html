@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenPulse - Meals</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️ GreenPulse Meal Tracker</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="meals.html">Meals</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="others.html">Other apps</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="meal-section">
+      <h2>Select Meal & Add Foods</h2>
+
+      <!-- Meal type -->
+      <label for="mealType">Meal Time:</label>
+      <select id="mealType">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <!-- Food input -->
+      <label for="foodInput">Select Food:</label>
+      <select id="foodInput">
+        <option value="Egg">Egg</option>
+        <option value="Chapati">Chapati</option>
+        <option value="Tea">Tea</option>
+        <option value="Rice">Rice</option>
+        <option value="Beans">Beans</option>
+        <option value="Chicken">Chicken</option>
+        <option value="Fish">Fish</option>
+        <option value="Vegetables">Vegetables</option>
+        <option value="Soda">Soda</option>
+        <option value="Bread">Bread</option>
+      </select>
+
+      <button id="addFoodBtn">Add Food</button>
+
+      <!-- Selected foods -->
+      <h3>Selected Foods:</h3>
+      <ul id="foodList"></ul>
+
+      <!-- Results -->
+      <h3>Total Calories: <span id="totalCalories">0</span> kcal</h3>
+      <h3>Recommended Exercise: <span id="exercise"></span></h3>
+
+      <button id="finishMealBtn">Finish Meal</button>
+    </section>
+  </main>
+<footer>
+    <p>&copy; 2025 GreenPulse APP | Eat Healthy Live longer</p>
+  </footer>
+  <script src="meals.js"></script>
+</body>
+</html>
